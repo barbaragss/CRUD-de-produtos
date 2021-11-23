@@ -16,15 +16,12 @@
 <body>
 
     <header>
-        <h1>xxx</h1>
+
+        <h1>Cadastro de Produtos</h1>
 
     </header>
 
     <main>
-        <div class="titulo">
-            <h2>Produtos</h2>
-            <span>Lista de produtos</span>
-        </div>
 
         <div class="lineInput">
             <label for="">Produto</label>
@@ -36,9 +33,14 @@
             <input type="number" id="preco" placeholder="Valor do produto">
         </div>
 
+
         <div class="card">
-            <button onclick="produto.salvar()" id="btn1" >Salvar</button>
+            <button onclick="produto.salvar()" id="btn1">Salvar</button>
             <button onclick="produto.cancelar()">Cancelar</button>
+
+        </div>
+        <div>
+            <p class="center">Lista de produtos</p>
         </div>
 
         <div class="conteudo">
@@ -50,14 +52,14 @@
                     <th class="center">Ações</th>
                 </thead>
                 <tbody id="tbody">
-                    
+
                 </tbody>
+
+
             </table>
         </div>
 
-
     </main>
-
 
 </body>
 

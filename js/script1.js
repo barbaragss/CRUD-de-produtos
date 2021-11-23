@@ -11,7 +11,7 @@ class Produto {
             if (this.editId == null) {
                 this.adicionar(produto);
             }
-            else{
+            else {
                 this.atualizar(this.editId, produto);
             }
         }
@@ -22,6 +22,7 @@ class Produto {
 
     listaTabela() {
         let tbody = document.getElementById('tbody');
+
         tbody.innerText = '';
 
         for (let i = 0; i < this.arrayProdutos.length; i++) {
@@ -34,8 +35,9 @@ class Produto {
             td_id.innerText = this.arrayProdutos[i].id;
             td_produtos.innerText = this.arrayProdutos[i].nomeProduto;
             td_valor.innerText = this.arrayProdutos[i].preco;
-
+            
             td_id.classList.add('center');
+            td_acoes.classList.add('center');
 
             let imgEdit = document.createElement('img');
             imgEdit.src = 'img/editar.png';
@@ -49,19 +51,20 @@ class Produto {
             td_acoes.appendChild(imgEdit);
             td_acoes.appendChild(imgDelet);
 
+
             console.log(this.arrayProdutos);
         }
     }
 
     adicionar(produto) {
-        produto.preco = parseFloat(produto.preco);
+        produto.preco = parseFloat(produto.preco)
         this.arrayProdutos.push(produto);
         this.id++;
     }
 
-    atualizar(id, produto){
-        for(let i = 0; i < this.arrayProdutos.length; i++){
-            if(this.arrayProdutos[i].id == id){
+    atualizar(id, produto) {
+        for (let i = 0; i < this.arrayProdutos.length; i++) {
+            if (this.arrayProdutos[i].id == id) {
                 this.arrayProdutos[i].nomeProduto = produto.nomeProduto;
                 this.arrayProdutos[i].preco = produto.preco;
             }
@@ -82,9 +85,9 @@ class Produto {
         produto.nomeProduto = document.getElementById('produto').value;
         produto.preco = document.getElementById('preco').value;
 
-
         return produto;
     }
+
 
     validaCampos(produto) {
         let msg = '';
@@ -126,6 +129,8 @@ class Produto {
         }
 
     }
+
 }
+      
 
 var produto = new Produto();
